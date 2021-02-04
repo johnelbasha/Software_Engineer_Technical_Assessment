@@ -1,0 +1,27 @@
+{
+  "name": "software_engineer_technical_assessment",
+  "version": "1.0.0",
+  "description": "my solution to the Koodoo coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnelbasha/Software_Engineer_Technical_Assessment.git"
+  },
+  "keywords": [
+    "Koodoo"
+  ],
+  "author": "John El Basha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johnelbasha/Software_Engineer_Technical_Assessment/issues"
+  },
+  "homepage": "https://github.com/johnelbasha/Software_Engineer_Technical_Assessment#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}
