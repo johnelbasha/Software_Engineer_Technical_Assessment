@@ -2,7 +2,7 @@
   "name": "software_engineer_technical_assessment",
   "version": "1.0.0",
   "description": "my solution to the Koodoo coding challenge",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "mocha || true"
   },
