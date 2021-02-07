@@ -109,6 +109,27 @@ let accountTooManyChildren = [
     }
 ]
 
+let balanceKeyDoesNotReturnDict = [
+    {
+        monthNumber: 0, // current month
+        account: {
+            balance: { amount: 0 },
+        },
+    },
+    {
+        monthNumber: 1, // last month
+        account: {
+            balance: { amount: 100 },
+        },
+    },
+    {
+        monthNumber: 2, // two months ago
+        account: {
+            balance: 'string',
+        },
+    }
+]
+
 describe('Behaviour of accountTypeChecker func. for errors in given arguments', function () {
     it('returns false if the argument given is not an array', function () {
         let result = app.accountTypeChecker('string');
@@ -147,6 +168,11 @@ describe('Behaviour of accountTypeChecker func. for errors in given arguments', 
 
     it("returns false if the account dictionary does not contain exactly one child", function() {
         let result = app.accountTypeChecker(accountTooManyChildren);
+        assert.equal(result, false);
+    });
+
+    it("returns false if the 'balance' key does not return a dictionary", function(){
+        let result = app.accountTypeChecker(balanceKeyDoesNotReturnDict);
         assert.equal(result, false);
     });
 });
