@@ -20,7 +20,6 @@ const validDataArg = [
 ]
 
 function accountTypeChecker(data) {
-
     if (
         Array.isArray(data) &&
         data.length >= 3 &&
@@ -34,7 +33,7 @@ function accountTypeChecker(data) {
                             typeof(child['account']['balance']['amount']) === 'number'
         )
     ) {
-        return 1000;
+        return 'string';
     }
     else {
         return false;

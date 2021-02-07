@@ -228,3 +228,14 @@ describe('Behaviour of accountTypeChecker func. for errors in given arguments', 
         assert.equal(result, false);
     });
 });
+
+
+describe("behaviours of func. accountTypeChecker when given valid data argument", function(){
+    it("returns a string", function(){
+        let result = app.accountTypeChecker(validDataArg);
+        assert.typeOf(result, 'string');
+    });
+
+
+
+});
