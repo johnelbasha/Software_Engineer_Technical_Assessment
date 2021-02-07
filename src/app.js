@@ -27,7 +27,8 @@ function accountTypeChecker(data) {
         data.every(child => child.constructor == Object &&
                             Object.keys(child).length === 2 &&
                             Object.keys(child).includes('account') &&
-                            child['account'].constructor == Object
+                            child['account'].constructor == Object &&
+                            Object.keys(child['account']).length === 1
         )
     ) {
         return 1000;
