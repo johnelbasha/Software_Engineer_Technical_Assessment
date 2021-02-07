@@ -29,7 +29,9 @@ function accountTypeChecker(data) {
                             Object.keys(child).includes('account') &&
                             child['account'].constructor == Object &&
                             Object.keys(child['account']).length === 1 &&
-                            child['account']['balance'].constructor == Object
+                            child['account']['balance'].constructor == Object &&
+                            Object.keys(child['account']['balance']).length === 1 &&
+                            typeof(child['account']['balance']['amount']) === 'number'
         )
     ) {
         return 1000;
