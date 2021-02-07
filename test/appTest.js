@@ -236,6 +236,9 @@ describe("behaviours of func. accountTypeChecker when given valid data argument"
         assert.typeOf(result, 'string');
     });
 
-
+    it("should return either the string 'A' or the string 'B'", function(){
+        let result = app.accountTypeChecker(validDataArg);
+        assert.include(['A', 'B'], result);
+    });
 
 });

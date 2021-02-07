@@ -33,7 +33,7 @@ function accountTypeChecker(data) {
                             typeof(child['account']['balance']['amount']) === 'number'
         )
     ) {
-        return 'string';
+        return 'A';
     }
     else {
         return false;
