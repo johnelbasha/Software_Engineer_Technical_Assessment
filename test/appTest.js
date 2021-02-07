@@ -172,6 +172,27 @@ let amountDoesNotReturntNumber = [
     }
 ]
 
+let validDataArgTypeA = [
+    {
+        monthNumber: 0, // current month
+        account: {
+            balance: { amount: 0 },
+        },
+    },
+    {
+        monthNumber: 1, // last month
+        account: {
+            balance: { amount: 75 },
+        },
+    },
+    {
+        monthNumber: 2, // two months ago
+        account: {
+            balance: { amount: 200 },
+        },
+    }
+]
+
 describe('Behaviour of accountTypeChecker func. for errors in given arguments', function () {
     it('returns false if the argument given is not an array', function () {
         let result = app.accountTypeChecker('string');
@@ -239,6 +260,16 @@ describe("behaviours of func. accountTypeChecker when given valid data argument"
     it("should return either the string 'A' or the string 'B'", function(){
         let result = app.accountTypeChecker(validDataArg);
         assert.include(['A', 'B'], result);
+    });
+
+    it("should return 'B' when the amount changes by the same amount every month", function() {
+        let result = app.accountTypeChecker(validDataArg);
+        assert.equal(result, 'B');
+    });
+
+    it("should return 'A' when the amount changes by differing amounts", function() {
+        let result = app.accountTypeChecker(validDataArgTypeA);
+        assert.equal(result, 'A');
     });
 
 });

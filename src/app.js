@@ -33,13 +33,25 @@ function accountTypeChecker(data) {
                             typeof(child['account']['balance']['amount']) === 'number'
         )
     ) {
-        return 'A';
+        let amounts = [];
+        for (let child of data){
+            amounts.push(child['account']['balance']['amount']);
+        }
+        let deltas = [];
+        for (let i = 0; i < amounts.length - 1; i++) {
+            deltas.push(amounts[i+1] - amounts[i]);
+        }
+        if (deltas.every(diff => diff === deltas[0])){
+            return 'B';
+        } else {
+            return 'A';
+        } 
     }
     else {
         return false;
     }
 }
 
-// console.log(accountTypeChecker(validDataArg));
+accountTypeChecker(validDataArg);
 
 module.exports.accountTypeChecker = accountTypeChecker;
