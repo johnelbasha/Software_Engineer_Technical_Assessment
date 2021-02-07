@@ -87,6 +87,27 @@ let accountNotDictionary = [ // TODO: Need to make this slicker.
     }
 ]
 
+let accountTooManyChildren = [
+    {
+        monthNumber: 0, // current month
+        account: {
+            balance: { amount: 0 },
+            string: 'string',
+        },
+    },
+    {
+        monthNumber: 1, // last month
+        account: {
+            balance: { amount: 100 },
+        },
+    },
+    {
+        monthNumber: 2, // two months ago
+        account: {
+            balance: { amount: 200 },
+        },
+    }
+]
 
 describe('Behaviour of accountTypeChecker func. for errors in given arguments', function () {
     it('returns false if the argument given is not an array', function () {
@@ -121,6 +142,11 @@ describe('Behaviour of accountTypeChecker func. for errors in given arguments', 
 
     it("returns false if the 'account' key does not correspond to a dictionary", function(){
         let result = app.accountTypeChecker(accountNotDictionary);
+        assert.equal(result, false);
+    });
+
+    it("returns false if the account dictionary does not contain exactly one child", function() {
+        let result = app.accountTypeChecker(accountTooManyChildren);
         assert.equal(result, false);
     });
 });
