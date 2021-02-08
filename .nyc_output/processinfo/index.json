@@ -1,0 +1,1 @@
+{"processes":{"7d274026-0aef-41d5-8514-071c1bf35d67":{"parent":null,"children":["e00d9675-8712-4c4d-b062-d81655ae16ba"]},"e00d9675-8712-4c4d-b062-d81655ae16ba":{"parent":"7d274026-0aef-41d5-8514-071c1bf35d67","children":[]}},"files":{"/Users/johnelbasha/code/koodoo/Software_Engineer_Technical_Assessment/src/app.js":["e00d9675-8712-4c4d-b062-d81655ae16ba"]},"externalIds":{}}
