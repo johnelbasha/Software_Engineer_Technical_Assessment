@@ -9,21 +9,23 @@ I was asked to complete a small technical challenge based on node.js.
 
 ## Usage
 
-To run tests (Mocha & Chai):
-
-
-Run the following command to install it:
+To run unit tests only (Mocha + Chai):
 
 ```console
-bundle install
+npm test run
 ```
 
-Run the generator:
+To run unit and coverage tests (Mocha + Chai + Nyc):
 
 ```console
-rails generate simple_form:install
+npm run coverage
 ```
 
+To execute the function
+
+```console
+node src/app/js
+```
 
 
 ### Things I consider in my solution 🤔
