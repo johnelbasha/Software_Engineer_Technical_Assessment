@@ -21,11 +21,19 @@ To run unit and coverage tests (Mocha + Chai + Nyc):
 npm run coverage
 ```
 
-To execute the function
+To execute the application:
 
 ```console
-node src/app/js
+node src/app.js
 ```
+
+If you want to see what the function returns, add the following before the last line of code and then execute the application.
+
+```javascript
+console.log(accountTypeChecker(<your data structure goes in here>))
+}
+```
+
 
 
 ### Things I consider in my solution 🤔
