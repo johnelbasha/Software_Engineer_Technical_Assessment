@@ -7,6 +7,25 @@
 I was asked to complete a small technical challenge based on node.js.
 
 
+## Usage
+
+To run tests (Mocha & Chai):
+
+
+Run the following command to install it:
+
+```console
+bundle install
+```
+
+Run the generator:
+
+```console
+rails generate simple_form:install
+```
+
+
+
 ### Things I consider in my solution 🤔
 
 - Does it solve the basic case?: YES
